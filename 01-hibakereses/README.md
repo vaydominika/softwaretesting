@@ -26,7 +26,3 @@ The suite covers discount thresholds, all parking discount combinations, age bou
 - A child under six pays no base cinema price but still pays the fixed 800 HUF 3D surcharge.
 - Fractional ages and examination scores are accepted within their numeric ranges; grade bands use the next lower-bound threshold, for example 59.5 is grade 2. The task does not explicitly require integer values for these inputs.
 - Boolean flags default to `false` and must otherwise be actual booleans. Numeric strings are not coerced. Invalid numeric types throw `TypeError`; non-finite or out-of-range values throw `RangeError`. The package classifier instead returns `INVALID`, as required.
-
-## Source attribution
-
-The specifications and original examples come from the [University of Miskolc teaching page](https://edu.iit.uni-miskolc.hu/tanszek:oktatas:hiba_felismeres_kodban), accessed October 30, 2026. That page identifies its content as [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The reproduced examples, corrected adaptations and accompanying defect report retain that attribution and license. The analysis and regression tests were prepared for this assignment.

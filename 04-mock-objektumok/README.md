@@ -40,7 +40,7 @@ verifyNoMoreInteractions(notifications);
 
 Rejected deposits preserve the balance and are checked with `verifyNoInteractions(notifications)`. A callback also verifies that the balance has already changed when the notification is sent.
 
-Exchange-rate stubbing is demonstrated with the teaching material's EUR/HUF example:
+Exchange-rate stubbing is demonstrated with a fixed EUR/HUF rate:
 
 ```java
 ExchangeRateService rates = mock(ExchangeRateService.class);
@@ -55,7 +55,3 @@ The value 400.0 is a deterministic test fixture, not a live exchange rate.
 If notification sending throws after a successful deposit, the exception propagates and the deposit remains committed in the account. This documented behavior follows the specified deposit-then-notify sequence; no transactional notification delivery is implied.
 
 JUnit and Mockito versions are pinned in the root `pom.xml`. Reports are written to this module's `target/surefire-reports/`.
-
-## Teaching reference
-
-Based on the [University of Miskolc Mockito guide](https://edu.iit.uni-miskolc.hu/tanszek:oktatas:mockito), accessed October 30, 2026. The notification message and EUR/HUF fixture follow that guide; the implementation adds validation and additional tests. The adapted teaching examples in this assignment retain the source's [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) attribution and license.

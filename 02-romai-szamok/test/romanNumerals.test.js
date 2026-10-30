@@ -40,3 +40,21 @@ QUnit.test('rejects values that are not numbers without coercion', (assert) => {
     assert.throws(() => toRoman(value), TypeError, String(value));
   }
 });
+
+QUnit.test('every supported number has a unique canonical representation', (assert) => {
+  const canonical = /^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/;
+  const values = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+  const seen = new Set();
+  for (let number = 1; number <= 3999; number += 1) {
+    const roman = toRoman(number);
+    assert.true(canonical.test(roman), 'Canonical: ' + number);
+    assert.false(seen.has(roman), 'Unique: ' + number);
+    seen.add(roman);
+    let parsed = 0;
+    for (let index = 0; index < roman.length; index += 1) {
+      const current = values[roman[index]];
+      parsed += current < (values[roman[index + 1]] ?? 0) ? -current : current;
+    }
+    assert.strictEqual(parsed, number, 'Round trip: ' + number);
+  }
+});

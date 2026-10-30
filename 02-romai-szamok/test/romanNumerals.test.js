@@ -28,3 +28,15 @@ QUnit.test('supports every denomination and the upper boundary', (assert) => {
     assert.strictEqual(toRoman(number), expected, String(number));
   }
 });
+
+QUnit.test('rejects numbers outside the integer range 1 through 3999', (assert) => {
+  for (const number of [0, -1, 4000, 1.5, 3998.5, NaN, Infinity, -Infinity]) {
+    assert.throws(() => toRoman(number), RangeError, String(number));
+  }
+});
+
+QUnit.test('rejects values that are not numbers without coercion', (assert) => {
+  for (const value of ['1', '', null, undefined, true, {}, [], 1n]) {
+    assert.throws(() => toRoman(value), TypeError, String(value));
+  }
+});

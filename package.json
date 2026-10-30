@@ -5,9 +5,9 @@
   "description": "Four software testing assignments: defect analysis, TDD, JUnit 5 and Mockito.",
   "type": "module",
   "scripts": {
-    "test": "qunit '01-hibakereses/test/**/*.test.js' '02-romai-szamok/test/**/*.test.js'",
-    "test:defects": "qunit '01-hibakereses/test/**/*.test.js'",
-    "test:roman": "qunit '02-romai-szamok/test/**/*.test.js'"
+    "test": "qunit \"01-hibakereses/test/**/*.test.js\" \"02-romai-szamok/test/**/*.test.js\"",
+    "test:defects": "qunit \"01-hibakereses/test/**/*.test.js\"",
+    "test:roman": "qunit \"02-romai-szamok/test/**/*.test.js\""
   },
   "engines": { "node": ">=20" },
   "devDependencies": { "qunit": "2.24.1" }

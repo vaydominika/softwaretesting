@@ -17,3 +17,14 @@ QUnit.test('supports five and subtractive units', (assert) => {
     assert.strictEqual(toRoman(number), expected, String(number));
   }
 });
+
+QUnit.test('supports every denomination and the upper boundary', (assert) => {
+  const examples = [
+    [10, 'X'], [39, 'XXXIX'], [40, 'XL'], [50, 'L'], [90, 'XC'],
+    [100, 'C'], [400, 'CD'], [500, 'D'], [900, 'CM'], [1000, 'M'],
+    [944, 'CMXLIV'], [1994, 'MCMXCIV'], [2026, 'MMXXVI'], [3999, 'MMMCMXCIX'],
+  ];
+  for (const [number, expected] of examples) {
+    assert.strictEqual(toRoman(number), expected, String(number));
+  }
+});

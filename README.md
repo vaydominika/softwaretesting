@@ -1,6 +1,6 @@
 # Software Testing
 
-Four completed software testing assignments. Assignment folders have Hungarian names; code, comments, test names, reports and documentation are in English. Standard Maven `src/main/java` and `src/test/java` paths are retained for tool compatibility.
+Four completed software testing assignments.
 
 | Folder | Assignment | Contents |
 | --- | --- | --- |
@@ -58,14 +58,3 @@ Historical Red commits intentionally fail their new tests. The final branch cont
 ## Continuous integration
 
 GitHub Actions runs QUnit and Maven tests for pushes and pull requests. Maven reports are available locally in each Java module's `target/surefire-reports/` directory. Dependencies, compiled output, local verification logs and downloaded development tools are excluded from Git.
-
-## Specifications and attribution
-
-Assignment 1 explicitly documents its interpretations of parking billing, daily caps and the 3D surcharge for children. These clarify details left implicit in the supplied text.
-
-Teaching references:
-
-- [University of Miskolc: detecting defects in code](https://edu.iit.uni-miskolc.hu/tanszek:oktatas:hiba_felismeres_kodban).
-- [University of Miskolc: Mockito](https://edu.iit.uni-miskolc.hu/tanszek:oktatas:mockito).
-
-The source pages identify their teaching content as [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Attribution and licensing for the reproduced/adapted teaching examples are recorded in the relevant assignment READMEs and the defect report.

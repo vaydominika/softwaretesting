@@ -11,3 +11,9 @@ QUnit.test('repeats one for two and three', (assert) => {
   assert.strictEqual(toRoman(2), 'II');
   assert.strictEqual(toRoman(3), 'III');
 });
+
+QUnit.test('supports five and subtractive units', (assert) => {
+  for (const [number, expected] of [[4, 'IV'], [5, 'V'], [8, 'VIII'], [9, 'IX']]) {
+    assert.strictEqual(toRoman(number), expected, String(number));
+  }
+});
